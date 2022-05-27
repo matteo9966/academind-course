@@ -1,0 +1,14 @@
+<div class="container p-3">
+  <p>Timestamp Clicker</p>
+  <button class="btn btn-primary" (click)="toggleShow()">Click</button>
+  <p *ngIf="show">This is secret text to hide on click!</p>
+  <ul class="list-group list-group-flush" *ngFor="let item of list;let i=index">
+    <li
+      class="list-group-item"
+      [ngStyle]="{ backgroundColor: item.indx > 4 && 'blue' }"
+      [ngClass]=" item.indx>4? 'white':''"
+    >
+      {{i}}.){{ item.date }}
+    </li>
+  </ul>
+</div>

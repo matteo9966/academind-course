@@ -1,0 +1,38 @@
+<div class="container">
+  <label for="user-input" class="form-label">Input</label>
+  <input
+    type="text"
+    id="user-input"
+    class="form-control"
+    (input)="onChange($event)"
+  />
+  <hr />
+  <p>{{ text }}</p>
+</div>
+
+<hr />
+<hr />
+<div class="container">
+  <label for="user-input" class="form-label">Input</label>
+  <input
+    type="text"
+    id="user-input"
+    class="form-control"
+    [(ngModel)]="input_value"
+  />
+  <br />
+  <button
+    class="btn btn-primary"
+    (click)="onClickDisplay()"
+    [disabled]="disableButton()"
+  >
+    Display
+  </button>
+  <hr />
+  <p *ngIf="person_created;else noperson">hai creato {{ text }}</p>
+  <p [ngStyle]="{backgroundColor:bgcolor()}">{{ text }}</p>
+</div>
+
+<ng-template #noperson>
+  <p>non hai ancora aggiunto nessuna persona</p>
+</ng-template>
