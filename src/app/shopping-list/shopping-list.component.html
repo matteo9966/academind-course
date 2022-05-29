@@ -1,0 +1,12 @@
+<ng-content></ng-content>
+<div class="row">
+  <div class="col-xs-10">
+    <app-shopping-edit (addItemToList)="addItemToList($event)"></app-shopping-edit>
+    <hr />
+    <ul class="list-group" *ngFor="let ingredient of ingredients">
+      <li class="list-group-item">
+        {{ ingredient.name }}({{ ingredient.amount }})
+      </li>
+    </ul>
+  </div>
+</div>
