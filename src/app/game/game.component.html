@@ -1,0 +1,15 @@
+<div class="container">
+    <div>{{count}}</div>
+    <div class="row" style="min-height: 200px ;">
+        <div class="col-xs-12 d-flex" *ngIf="evenCount>0">
+           <app-number-container [title]="'Odd'" [bgColor]="'blue'" [count-value]="oddCount"></app-number-container>
+           <app-number-container [title]="'Even'" [bgColor]="'red'" [count-value]="evenCount"></app-number-container>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="col-xs-12">
+     <button class="btn btn-primary" (click)="onClickStart()">Start</button>
+     <button class="btn btn-danger" (click)="onClickStop()">Stop</button>
+        </div>
+    </div>
+</div>
