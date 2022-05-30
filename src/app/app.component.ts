@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'academind-course';
+
+  activeRoute="";
+  
+  changeActiveRoute(route:string){
+    this.activeRoute=route;
+
+  }
 }
+

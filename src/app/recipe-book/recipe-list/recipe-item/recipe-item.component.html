@@ -1,1 +1,8 @@
-<p>recipe-item works!</p>
+<div class="card" style="width: 18rem;" *ngIf="recipe">
+    <div class="card-body">
+        <img [src]="recipe.imagePath" class="card-img-top img-thumbnail" alt="immagine">
+      <h5 class="card-title">{{recipe.name}}</h5>
+      <p class="card-text">{{recipe.description}}</p>
+      <a href="#" class="btn btn-primary" role="button" (click)="onClickShowDetail()">Check recipe!</a>
+    </div>
+  </div>
