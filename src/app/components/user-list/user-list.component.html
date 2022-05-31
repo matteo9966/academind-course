@@ -1,0 +1,22 @@
+<div class="container">
+    <h5>changes={{count}}</h5>
+    <div class="row">
+        <div class="col-xs-5">
+            <ul class="list-group" *ngFor="let user of users;let i = index">
+                <li (click)="changeStatus(i)" class="list-group-item my-1">{{user.name}} - {{user.status}}</li>
+              </ul>
+        </div>
+        <!-- <div class="col-xs-5">
+            <ul class="list-group" *ngFor="let user of getActiveUsers();let i = index">
+                <li  class="list-group-item my-1">{{user.name}} - {{user.status}}</li>
+              </ul>
+        </div>
+        <hr>
+        <div class="col-xs-5">
+            <ul class="list-group" *ngFor="let user of getInactiveUsers()">
+                <li class="list-group-item my-1">{{user.name}} - {{user.status}}</li>
+              </ul>
+        </div> -->
+ 
+    </div>
+</div>
