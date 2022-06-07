@@ -1,5 +1,4 @@
-<div *ngIf="selectedRecipe;else placeholder">
-
+<div *ngIf="selectedRecipe; else placeholder">
   <div class="row">
     <div class="col-xs-12">
       <img src="" alt="" class="img-fluid rounded" />
@@ -7,12 +6,13 @@
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <h1>{{selectedRecipe.name}}</h1>
+      <h1>{{ selectedRecipe.name }}</h1>
     </div>
   </div>
   <div class="row">
     <div class="dropdown">
       <button
+        appDropdown [list]="list" 
         class="btn btn-primary dropdown-toggle"
         type="button"
         id="dropdownMenuButton1"
@@ -21,30 +21,35 @@
       >
         Manage Recipe
       </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item" href="#">Add Ingredient</a></li>
+      <ul #list class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="#" (click)="addIngredientsToShoppingList($event)">Add Ingredients to shoppinglist</a></li>
         <li><a class="dropdown-item" href="#">Edit Recipe</a></li>
         <li><a class="dropdown-item" href="#">Delete Recipe</a></li>
       </ul>
     </div>
   </div>
   <div class="row">
-      <div class="col-xs-12">
-        <img src="" alt="" class="img-fluid rounded" />
-      </div>
+    <div class="col-xs-12">
+      <img src="" alt="" class="img-fluid rounded" />
     </div>
-    <div class="row">
-      <div class="col-xs-12">
-       {{selectedRecipe.description}}
-      </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      {{ selectedRecipe.description }}
     </div>
-    <div class="row">
-      <div class="col-xs-12">
-       Details
-      </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h4>Ingredients:</h4>
+      <ul
+        class="list-group"
+        *ngFor="let ingredient of selectedRecipe.ingredients"
+      >
+        <li class="list-group-item">{{ ingredient.name }} - {{ingredient.amount}}</li>
+      </ul>
     </div>
+  </div>
 </div>
-
 
 <ng-template #placeholder>
   <h5>Select a recipe to see details</h5>
