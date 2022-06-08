@@ -1,0 +1,7 @@
+<p>Server with id :{{id}}</p>
+<div *ngIf="server">
+    <p>ServerName: {{server.name}}</p>
+    <p>ServerStatus: {{server.status}}</p>
+    <p>ServerId: {{server.id}}</p>
+<button class="btn btn-primary" (click)="onEdit()">Edit Server</button>
+</div>

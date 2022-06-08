@@ -1,9 +1,23 @@
-<p>servers works!</p>
-<div class="list-group">
-  <a [routerLink]="['/servers',5,'edit']" [queryParams]="{allowEdit:'1'}" [fragment]="'loading'">vai a users</a>
-    <a  class="list-group-item list-group-item-action" >active</a>
-    <a href="#" class="list-group-item list-group-item-action">A third link item</a>
-    <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
-    <a class="list-group-item list-group-item-action disabled">A disabled link item</a>
+<p>Servers</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="list-group">
+        <a
+          *ngFor="let server of servers"
+          [routerLink]="['/servers', server.id]"
+          [queryParams]="{ allowEdit: server.id > 1 ? '1' : '0' }"
+          [fragment]="'loading'"
+          >{{ server.name }}</a
+        >
+      </div>
+    </div>
+    <div class="col">
+      <router-outlet></router-outlet>
+    </div>
   </div>
-<button class="btn btn-primary" (click)="onReloadServers()">Reload Servers</button>
+</div>
+<div></div>
+<!-- <button class="btn btn-primary" (click)="onReloadServers()">
+  Reload Servers
+</button> -->
