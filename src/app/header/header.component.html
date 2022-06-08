@@ -1,42 +1,24 @@
-<!-- <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a href="#" class="navbar-brand">Recipe Book</a>
-    </div>
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li>Recipes</li>
-        <li>Shopping list</li>
-      </ul>
-      <a href="#" class="dropdown-toggle" role="button">Toggle</a>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown-menu"><a href="#">Save Data</a></li>
-        <li class="dropdown-menu"><a href="#">Fetch Data</a></li>
-      </ul>
-    </div>
-  </div>
-</nav> -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Recipe Book</a>
+      <a class="navbar-brand" >Recipe Book</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 container-fluid">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#" (click)="goToRecipes()">Recipes</a>
+            <a class="nav-link" routerLinkActive="active" routerLink="/recipes">Recipes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" (click)="goToShoppingList()">Shopping list</a>
+            <a class="nav-link"  routerLinkActive="active" routerLink="/ingredients">Shopping list</a>
           </li>
           <li class="nav-item dropdown ms-auto">
-            <a appDropdown [list]="drop" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a appDropdown [list]="drop" class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Manage
             </a>
             <ul class="dropdown-menu " #drop aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Recipes</a></li>
-              <li><a class="dropdown-item" href="#">Shopping</a></li>
+              <li><a class="dropdown-item" >Recipes</a></li>
+              <li><a class="dropdown-item" >Shopping</a></li>
             </ul>
           </li>
         </ul>

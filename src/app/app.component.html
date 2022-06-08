@@ -2,11 +2,6 @@
 
 <div class="container p-2">
   <div class="row">
-    <div class="col-md-12" *ngIf="activeRoute==='recipes'||activeRoute===''">
-      <app-recipe-book></app-recipe-book>
-    </div>
-    <div class="col-md-12" *ngIf="activeRoute==='shopping-list'">
-      <app-shopping-list><h3>La lista della spesa ng-content</h3></app-shopping-list>
-    </div>
+   <router-outlet></router-outlet>
   </div>
 </div>

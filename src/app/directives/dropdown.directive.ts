@@ -21,6 +21,9 @@ export class DropdownDirective {
       ? this.renderer.addClass(this.list, 'show')
       : this.renderer.removeClass(this.list, 'show');
   }
+  // @HostListener('blur') closeDropDown(){
+  //   this.renderer.removeClass(this.list,'show');
+  // }
 
   constructor(private renderer: Renderer2) {}
 }

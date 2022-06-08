@@ -3,6 +3,6 @@
         <img [src]="recipe.imagePath" class="card-img-top img-thumbnail" alt="immagine">
       <h5 class="card-title">{{recipe.name}}</h5>
       <p class="card-text">{{recipe.description}}</p>
-      <a href="#" class="btn btn-primary" role="button" (click)="onClickShowDetail()">Check recipe!</a>
+      <a class="btn btn-primary" role="button" [routerLink]="''+(recipe.id)">Check recipe!</a>
     </div>
   </div>
