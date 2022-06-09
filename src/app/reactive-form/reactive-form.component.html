@@ -1,0 +1,76 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      aria-describedby="emailHelp"
+      formControlName="email"
+    />
+    <div id="emailHelp" class="form-text">
+      We'll never share your email with anyone else.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Username</label>
+    <input
+      type="text"
+      class="form-control"
+      id="username"
+      formControlName="username"
+    />
+    <p *ngIf="!signupForm.get('username')?.valid && signupForm.get('username')?.touched">Username non valido</p>
+  </div>
+  <div class="form-check">
+    <input
+      class="form-check-input"
+      type="radio"
+      formControlName="gender"
+      name="gender"
+      id="flexRadioDefault1"
+      value="male"
+    />
+    <label class="form-check-label" for="flexRadioDefault1"> Male </label>
+  </div>
+  <div class="form-check">
+    <input
+      class="form-check-input"
+      type="radio"
+      name="gender"
+      id="flexRadioDefault2"
+      formControlName="gender"
+      value="female"
+      checked
+    />
+    <label class="form-check-label" for="flexRadioDefault2"> Female </label>
+  </div>
+
+  <div formGroupName="others">
+    <div class="container">
+        <div class="row">
+          <div class="col">
+            <select class="form-select" aria-label="Default select example" formControlName="colore" >
+                <option selected>Colore preferito</option>
+                <option value="rosso">Rosso</option>
+                <option value="giallo">Giallo</option>
+                <option value="blu">blu</option>
+              </select>
+          </div>
+          <div class="col">
+            <select class="form-select" aria-label="Default select example" formControlName="animale">
+                <option selected>Open this select menu</option>
+                <option value="cane">Cane</option>
+                <option value="gatto">Gatto</option>
+                <option value="tucano">Tucano</option>
+              </select>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div>
+      <h4>your hobbies</h4>
+      <button class="btn btn-default" type="button" (click)="onAddHobby()">Add Hobby</button>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

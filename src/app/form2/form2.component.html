@@ -1,0 +1,52 @@
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+ 
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="exampleInputPassword1"
+      name="password"
+      ngModel
+      minlength="5"
+      #pass="ngModel"
+    />
+    <p *ngIf="!pass.valid && pass.touched"> pass non valida</p>
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">@</span>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Email"
+      aria-label="Email"
+      aria-describedby="basic-addon1"
+      name="email"
+      email
+      ngModel
+      #em="ngModel"
+      required
+    />
+    <p style="display:block" *ngIf="!em.valid && em.touched">Email inserita non valida!</p>
+  </div>
+  <select
+    class="form-select mb-5"
+    aria-label="Default select example"
+    name="level"
+    ngModel="basic"
+  >
+    <option selected value="basic">Basic</option>
+    <option value="medium">Medium</option>
+    <option value="advanced">Advanced</option>
+    <option value="pro">Pro</option>
+  </select>
+  <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+</form>
+
+<div class="row" *ngIf="submitted">
+    <div class="col-xs-12">
+        <ul *ngFor="let value of values">
+           <li [id]="value">{{value}}</li>
+        </ul>
+    </div>
+</div>
