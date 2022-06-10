@@ -8,8 +8,12 @@
       aria-describedby="emailHelp"
       formControlName="email"
     />
-    <div id="emailHelp" class="form-text">
-      We'll never share your email with anyone else.
+    <div
+      id="emailHelp"
+      class="form-text"
+      *ngIf="!signupForm.get('email')?.valid && signupForm.get('email')?.touched"
+    >
+      email is not valid
     </div>
   </div>
   <div class="mb-3">
@@ -20,7 +24,14 @@
       id="username"
       formControlName="username"
     />
-    <p *ngIf="!signupForm.get('username')?.valid && signupForm.get('username')?.touched">Username non valido</p>
+    <p
+      *ngIf="
+        !signupForm.get('username')?.valid &&
+        signupForm.get('username')?.touched
+      "
+    >
+      Username non valido
+    </p>
   </div>
   <div class="form-check">
     <input
@@ -48,29 +59,45 @@
 
   <div formGroupName="others">
     <div class="container">
-        <div class="row">
-          <div class="col">
-            <select class="form-select" aria-label="Default select example" formControlName="colore" >
-                <option selected>Colore preferito</option>
-                <option value="rosso">Rosso</option>
-                <option value="giallo">Giallo</option>
-                <option value="blu">blu</option>
-              </select>
-          </div>
-          <div class="col">
-            <select class="form-select" aria-label="Default select example" formControlName="animale">
-                <option selected>Open this select menu</option>
-                <option value="cane">Cane</option>
-                <option value="gatto">Gatto</option>
-                <option value="tucano">Tucano</option>
-              </select>
-          </div>
+      <div class="row">
+        <div class="col">
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            formControlName="colore"
+          >
+            <option selected>Colore preferito</option>
+            <option value="rosso">Rosso</option>
+            <option value="giallo">Giallo</option>
+            <option value="blu">blu</option>
+          </select>
+        </div>
+        <div class="col">
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            formControlName="animale"
+          >
+            <option selected>Open this select menu</option>
+            <option value="cane">Cane</option>
+            <option value="gatto">Gatto</option>
+            <option value="tucano">Tucano</option>
+          </select>
         </div>
       </div>
+    </div>
   </div>
-  <div>
-      <h4>your hobbies</h4>
-      <button class="btn btn-default" type="button" (click)="onAddHobby()">Add Hobby</button>
+  <div formArrayName="hobbies">
+    <div
+      class="form-group"
+      *ngFor="let hobby of getHobbies().controls; let i = index"
+    >
+      <input type="text" class="form-control my-2" [formControlName]="i" />
+    </div>
+    <h4>your hobbies</h4>
+    <button class="btn btn-primary my-2" type="button" (click)="onAddHobby()">
+      Add Hobby
+    </button>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

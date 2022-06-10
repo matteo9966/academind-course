@@ -7,6 +7,7 @@ import { FormComponent } from './form/form.component';
 import { Form2Component } from './form2/form2.component';
 import { OpenDropdownDirective } from './directives/open-dropdown.directive';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { ReactiveFormTestComponent } from './reactive-form-test/reactive-form-test.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     FormComponent,
     Form2Component,
     OpenDropdownDirective,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    ReactiveFormTestComponent
   ],
   imports: [
     BrowserModule,FormsModule,ReactiveFormsModule
