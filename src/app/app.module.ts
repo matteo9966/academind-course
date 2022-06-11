@@ -15,6 +15,8 @@ import { AppRouting } from './app-routing.module';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { NoRecipeComponent } from './recipe-book/no-recipe/no-recipe.component';
 import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.component';
+import { FormsModule } from '@angular/forms';
+import { HoverHighlightDirective } from './directives/hover-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -29,10 +31,11 @@ import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.compo
     DropdownDirective,
     ErrorPageComponent,
     NoRecipeComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    HoverHighlightDirective
   ],
   imports: [
-    BrowserModule,AppRouting
+    BrowserModule,AppRouting,FormsModule
   ],
   providers: [ShoppingListService],
   bootstrap: [AppComponent]

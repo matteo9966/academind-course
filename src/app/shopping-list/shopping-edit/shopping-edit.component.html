@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-12">
-    <form action="">
+    <form #formcomp="ngForm" (ngSubmit)="onSubmit()">
       <div class="row my-3">
         <div class="col-sm-7 form-group">
           <label for="name" class="form-label">Name</label>
@@ -10,6 +10,10 @@
             id="name"
             aria-describedby="emailHelp"
             #itemNameInput
+            ngModel 
+            #name="ngModel"
+            name="name"
+            required
           />
         </div>
         <div class="col-sm-5 form-group">
@@ -20,13 +24,19 @@
             id="name"
             aria-describedby="emailHelp"
             #itemAmountInput
+            ngModel
+            #amount="ngModel"
+            name="amount"
+            min="1"
+            max="1000"
           />
+
         </div>
         <div class="row"></div>
         
         <div class="col-xs-12 mt-3">
-          <button class="btn btn-success mx-1" (click)="onClickAdd($event,itemNameInput,itemAmountInput)">Add</button>
-          <button class="btn btn-danger mx-1">Edit</button>
+          <button class="btn btn-success mx-1" type="submit" [disabled]="!formcomp.valid">Add</button>
+          <!-- <button class="btn btn-danger mx-1">Edit</button> -->
           <button class="btn btn-primary mx-1">Clear</button>
         </div>
       </div>
