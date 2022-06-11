@@ -1,0 +1,32 @@
+<div class="container p-5">
+   <div class="row">
+       <h3>Lascia un commento</h3>
+       <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+           <div class="mb-3">
+             <label for="exampleInputEmail1" class="form-label">Titolo</label>
+             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="title">
+             
+           </div>
+           <div class="form-floating">
+               <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" formControlName="content"></textarea>
+               <label for="floatingTextarea">Comment</label>
+             </div>
+         
+           <button type="submit" class="btn btn-primary mt-5">Submit</button>
+         </form>
+   </div>
+    <p *ngIf="loading && !error">Loading....</p>
+    <p class="alert alert-danger my-5" *ngIf="error">{{errorMessage}}</p>
+    <div class="row" *ngIf="!loading">
+      <button class="btn btn-primary m-5" (click)="loadComments()">Load comments</button>
+    <table class="table" *ngFor="let post of posts" >
+        <tbody>
+          <tr>
+            <td>{{post.title}}</td>
+            <td>{{post.content}}</td>
+            <td><button class="btn btn-danger" (click)="deleteComment(post.id)">Cancella Post</button></td>
+          </tr>
+        </tbody>
+      </table>
+   </div>
+</div>
