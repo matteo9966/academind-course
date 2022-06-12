@@ -8,7 +8,7 @@ import { RecipeService } from './services/recipe.service';
   selector: 'app-recipe-book',
   templateUrl: './recipe-book.component.html',
   styleUrls: ['./recipe-book.component.css'],
-  providers: [RecipeService],
+  providers: [],
 })
 export class RecipeBookComponent implements OnInit {
   constructor(private recipeService: RecipeService,private router:Router,private activeRoute:ActivatedRoute) {}

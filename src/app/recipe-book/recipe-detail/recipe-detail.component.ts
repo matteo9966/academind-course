@@ -12,28 +12,38 @@ import { RecipeService } from '../services/recipe.service';
 })
 export class RecipeDetailComponent implements OnInit {
   selectedRecipe: Recipe | undefined;
-  constructor(private recipeService: RecipeService,private shoppingListService:ShoppingListService,private router:Router,private activeRoute:ActivatedRoute) {}
-
+  constructor(
+    private recipeService: RecipeService,
+    private shoppingListService: ShoppingListService,
+    private router: Router,
+    private activeRoute: ActivatedRoute
+  ) {}
+  id: number | undefined;
   ngOnInit(): void {
     // this.recipeService.recipeSelected.subscribe(
     //   (recipe) => (this.selectedRecipe = recipe)
     // );
-    this.activeRoute.params.subscribe(params=>this.selectedRecipe=this.recipeService.getRecipe(+params['id']))
-
+    this.activeRoute.params.subscribe((params) => {
+      this.selectedRecipe = this.recipeService.getRecipe(+params['id']);
+      this.id = +params['id'];
+    });
   }
 
-  addIngredientsToShoppingList(e:Event){
+  addIngredientsToShoppingList(e: Event) {
     e.preventDefault();
-    if(this.selectedRecipe){
-      this.selectedRecipe.ingredients.forEach(ingredient => {
-        this.shoppingListService.addItemToList({...ingredient})
+    if (this.selectedRecipe) {
+      this.selectedRecipe.ingredients.forEach((ingredient) => {
+        this.shoppingListService.addItemToList({ ...ingredient });
       });
     }
   }
 
-  goToEditRecipe(){
-    console.log('going to recipe edit')
-    this.router.navigate(['edit'],{relativeTo:this.activeRoute})
+  goToEditRecipe() {
+    console.log('going to recipe edit');
+    this.router.navigate(['edit'], { relativeTo: this.activeRoute });
   }
-  
+
+  deleteRecipe() {
+    this.recipeService.deleteRecipe(+this.id!);
+  }
 }

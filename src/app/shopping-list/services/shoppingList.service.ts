@@ -2,10 +2,9 @@ import { Injectable } from '@angular/core';
 import { Ingredient } from 'src/app/shared/models/ingredient.model';
 import { BehaviorSubject, Subject } from 'rxjs';
 export class ShoppingListService {
-  selectedIngredientIndex$:Subject<number>=new Subject();
+  selectedIngredientIndex$: Subject<number> = new Subject();
   newShoppingList: Subject<Ingredient[]> = new Subject();
-  
-  
+
   private ingredients: Ingredient[] = [
     new Ingredient('apples', 5),
     new Ingredient('kiwis', 15),
@@ -27,10 +26,17 @@ export class ShoppingListService {
     }
     return this.ingredients[index];
   }
-  updateIngredient(index:number,ingredient:Ingredient){
-    console.log('aggiorno gli ingredienti con',ingredient)
-    this.ingredients[index]=ingredient;
+  updateIngredient(index: number, ingredient: Ingredient) {
+    console.log('aggiorno gli ingredienti con', ingredient);
+    this.ingredients[index] = ingredient;
     this.ingredientsSubject$.next(this.ingredients);
+  }
 
+  deleteIngredient(index: number) {
+    if (this.ingredients.length < index) {
+      return;
+    }
+    this.ingredients.splice(index, 1);
+    this.ingredientsSubject$.next(this.ingredients);
   }
 }

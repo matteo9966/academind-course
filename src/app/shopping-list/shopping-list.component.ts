@@ -35,4 +35,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   onClickItem(index: number) {
     this.shoppingListService.selectedIngredientIndex$.next(index);
   }
+  onClickDelete(id:number){
+    this.shoppingListService.deleteIngredient(id);
+  }
 }

@@ -1,11 +1,28 @@
 <ng-content></ng-content>
 <div class="row">
   <div class="col-xs-10">
-    <app-shopping-edit (addItemToList)="addItemToList($event)"></app-shopping-edit>
+    <app-shopping-edit
+      (addItemToList)="addItemToList($event)"
+    ></app-shopping-edit>
     <hr />
-    <ul class="list-group" *ngFor="let ingredient of ingredients;let i = index">
-      <li class="list-group-item" style="cursor:pointer;" appHoverHighlight (click)="onClickItem(i)">
-        {{ ingredient.name }}({{ ingredient.amount }})
+    <ul
+      class="list-group"
+      *ngFor="let ingredient of ingredients; let i = index"
+    >
+      <li
+        class="list-group-item my-1"
+        style="cursor: pointer"
+        appHoverHighlight
+        (click)="onClickItem(i)"
+      >
+        <div class="d-flex justify-content-between">
+          <span class="d-block">
+            {{ ingredient.name }}({{ ingredient.amount }})
+            </span>
+            <span class="d-block">
+              <button class="btn btn-danger" (click)="onClickDelete(i)">Delete</button>
+            </span>
+        </div>
       </li>
     </ul>
   </div>

@@ -15,8 +15,9 @@ import { AppRouting } from './app-routing.module';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { NoRecipeComponent } from './recipe-book/no-recipe/no-recipe.component';
 import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HoverHighlightDirective } from './directives/hover-highlight.directive';
+import { RecipeService } from './recipe-book/services/recipe.service';
 
 @NgModule({
   declarations: [
@@ -35,9 +36,9 @@ import { HoverHighlightDirective } from './directives/hover-highlight.directive'
     HoverHighlightDirective
   ],
   imports: [
-    BrowserModule,AppRouting,FormsModule
+    BrowserModule,AppRouting,FormsModule,ReactiveFormsModule
   ],
-  providers: [ShoppingListService],
+  providers: [ShoppingListService,RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
