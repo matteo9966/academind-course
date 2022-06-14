@@ -28,6 +28,8 @@ export class RecipeService {
 
   constructor(private router: Router) {
     this.recipeList$.next(this.recipes);
+    console.clear();
+    console.log(JSON.stringify(this.recipes));
   }
 
   getRecipes() {

@@ -7,12 +7,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 container-fluid">
           <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/recipes">Recipes</a>
+            <a class="nav-link" routerLinkActive="active" routerLink="/recipes" *ngIf="loggedIn">Recipes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  routerLinkActive="active" routerLink="/ingredients">Shopping list</a>
+            <a class="nav-link" routerLinkActive="active" routerLink="/auth" *ngIf="!loggedIn">Authentication</a>
           </li>
-          <li class="nav-item dropdown ms-auto">
+          <li class="nav-item">
+            <a class="nav-link"  routerLinkActive="active" routerLink="/ingredients" *ngIf="loggedIn">Shopping list</a>
+          </li>
+          <li class="nav-item ms-auto">
+            <a class="nav-link"  routerLinkActive="active" *ngIf="loggedIn" (click)="onLogout()">Logout</a>
+          </li>
+
+          <li class="nav-item dropdown ms-auto" *ngIf="loggedIn">
             <a appDropdown [list]="drop" class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Manage
             </a>

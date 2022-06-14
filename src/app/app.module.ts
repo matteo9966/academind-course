@@ -18,7 +18,9 @@ import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HoverHighlightDirective } from './directives/hover-highlight.directive';
 import { RecipeService } from './recipe-book/services/recipe.service';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthComponent } from './Authentication/auth/auth.component';
+import { AuthInterceptorService } from './Authentication/auth-interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,12 +35,25 @@ import { RecipeService } from './recipe-book/services/recipe.service';
     ErrorPageComponent,
     NoRecipeComponent,
     RecipeEditComponent,
-    HoverHighlightDirective
+    HoverHighlightDirective,
+    AuthComponent,
   ],
   imports: [
-    BrowserModule,AppRouting,FormsModule,ReactiveFormsModule
+    BrowserModule,
+    AppRouting,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
-  providers: [ShoppingListService,RecipeService],
-  bootstrap: [AppComponent]
+  providers: [
+    ShoppingListService,
+    RecipeService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
