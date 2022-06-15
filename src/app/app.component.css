@@ -1,0 +1,11 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height:100vh;
+}
+.body-container{
+    display: flex;
+    justify-content: center;
+}
+
