@@ -1,4 +1,5 @@
 <div class="row">
+  <app-alert [message]="errorMessage" (closeDialog)="closeErrorDialog($event)" *ngIf="showOverlayDialog"></app-alert>
   <div class="col-xs-12">
     <h3>{{ loginMode ? "Login" : "Signup" }}</h3>
   </div>

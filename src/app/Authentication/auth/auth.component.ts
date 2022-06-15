@@ -15,6 +15,7 @@ export class AuthComponent implements OnInit {
   showDialog=false;
   errorMessage="";
   loginMode = true;
+  showOverlayDialog=false // questo overlay è stato aggiunto dopo nella sezione dynamic component!
 
   constructor(
     private authenticationService: AuthenticationService,
@@ -55,6 +56,7 @@ export class AuthComponent implements OnInit {
         },
         error: (err) => { this.errorMessage="Error: signup error, try later :(";
         this.showMessage(true)
+        this.showOverlayDialog=true;
       },
         complete: () => console.log('Observer got a complete notification'),
       });
@@ -73,6 +75,7 @@ export class AuthComponent implements OnInit {
           console.log("recieved an error:",error)
           this.errorMessage="Error: login error, try later :("
           this.showDialog=true;
+          this.showOverlayDialog=true;
           
      
         },
@@ -81,6 +84,9 @@ export class AuthComponent implements OnInit {
 
   showMessage(show:boolean){
      this.showDialog=show;
+  }
+  closeErrorDialog(close:boolean){
+    this.showOverlayDialog=!close;
   }
 
 }
