@@ -1,21 +1,28 @@
 <div class="container-fluid card mx-2 my-5 p-2">
-  <form>
+  <form #regForm="ngForm" (ngSubmit)="onSubmit()">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Nome</label>
       <input
-        type="email"
+        type="text"
         class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
+        id="text"
+        aria-describedby="nameinput"
+        name="nome"
+        [(ngModel)]="user.name"
+        #nome="ngModel"
+        required
       />
     </div>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Cognome</label>
       <input
-        type="email"
+        type="text"
         class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
+        id="cognome"
+        name="cognome"
+        #cognome="ngModel"
+        [(ngModel)]="user.surname"
+        required
       />
     </div>
     <div class="mb-3">
@@ -23,20 +30,84 @@
       <input
         type="email"
         class="form-control"
-        id="exampleInputEmail1"
+        id="email"
+        #emial="ngModel"
         aria-describedby="emailHelp"
+        [(ngModel)]="user.email"
+        required
+        name="email"
       />
+      <ng-container [ngTemplateOutlet]="errorTemplateMessage" 
+      *ngIf="emial.invalid && emial.touched"
+      [ngTemplateOutletContext] ="{varMessage:'è obbligatorio scegliere una email'}">
+      </ng-container>
+
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" />
+      <input
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        name="password"
+        [(ngModel)]="user.password"
+        #password="ngModel"
+        required
+      />
+
+      <ng-container [ngTemplateOutlet]="errorTemplateMessage" 
+      *ngIf="password.invalid && password.touched"
+      [ngTemplateOutletContext] ="{varMessage:'è obbligatorio scegliere una password'}">
+      </ng-container>
+
     </div>
-   
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"
+        >Conferma Password</label
+      >
+      <input
+        type="password"
+        class="form-control"
+        id="confirmationpass"
+        name="confirm-passord"
+        #confirmPassowrd="ngModel"
+        [(ngModel)]="passwordConfirm"
+        [passwordValid]="user.password"
+        required
+        
+      />
+      <ng-container [ngTemplateOutlet]="errorTemplateMessage" 
+       *ngIf="confirmPassowrd.invalid && confirmPassowrd.touched"
+       [ngTemplateOutletContext] ="{varMessage:'password non corrispondono'}">
+       </ng-container>
+
+    </div>
 
     <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="exampleCheck1"
+        name="termsAndConditions"
+        [(ngModel)]="termsAndConditions"
+        required
+        #condizioni="ngModel"
+      />
+      <label class="form-check-label" for="exampleCheck1"
+        >Letto termini e condizioni</label
+      >
+      <ng-container [ngTemplateOutlet]="errorTemplateMessage" 
+      *ngIf="condizioni.invalid && condizioni.touched"
+      [ngTemplateOutletContext] ="{varMessage:'è obbligatorio accettare le condizioni'}">
+      </ng-container>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
+
+
+<ng-template let-message="varMessage" #errorTemplateMessage>
+  <p style="color: rgb(255, 89, 89); font-size: 12px; line-height: 1">
+    {{ message }}
+  </p>
+</ng-template>

@@ -10,6 +10,8 @@ import { AppRouterModule } from './app-router.module';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { AUTHENTICATED } from './tokens';
+import { FormsModule } from '@angular/forms';
+import { PasswordValidatorDirective } from './directives/passwordValidator.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,14 +19,16 @@ import { AUTHENTICATED } from './tokens';
     MainNavbarComponent,
     MainFooterComponent,
     HomePageComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    PasswordValidatorDirective
   ],
   imports: [
     BrowserModule,
     // RouterModule
-    AppRouterModule
+    AppRouterModule,
+    FormsModule,
   ],
-  providers: [{provide:AUTHENTICATED,useValue:false}],
-  bootstrap: [AppComponent]
+  providers: [{ provide: AUTHENTICATED, useValue: false }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
