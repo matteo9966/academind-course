@@ -1,0 +1,11 @@
+<form (ngSubmit)="onSubmit()">
+    <app-text-input label="address" [control]="form.addressLine1"></app-text-input>
+    <app-text-input label="city" [control]="form.city"></app-text-input>
+    <app-text-input label="zip" [control]="form.zip"></app-text-input>
+    <app-text-input label="state" [control]="form.state"></app-text-input>
+    <button type="submit">Inserisi</button>
+    <hr>
+    <p>
+      {{form.value|json}}
+    </p>
+  </form>

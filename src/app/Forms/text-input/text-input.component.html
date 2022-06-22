@@ -1,0 +1,7 @@
+<div *ngIf="control" class="text-input">
+  <label>{{ label }}:</label>
+  <input type="text" [formControl]="control" />
+<p *ngFor="let error of (control.errors|errorKeys)">
+  {{ messages[error] }}
+</p>
+</div>

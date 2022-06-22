@@ -1,0 +1,15 @@
+.text-input > * {
+  display: block;
+  margin-right: 2ch;
+}
+
+.text-input {
+  display: flex;
+  justify-content: flex-end;
+  width: 400px;
+  margin-top: 1vh;
+}
+button {
+  margin: 1vh;
+  
+}
