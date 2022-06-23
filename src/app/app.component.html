@@ -1,1 +1,7 @@
-<app-form-custom-input></app-form-custom-input>
+<div class="form-container">
+
+</div>
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <app-custom-form formControlName="address"></app-custom-form>
+    <button type="submit">Inserisci form</button>
+</form>
