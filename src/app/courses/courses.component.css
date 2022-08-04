@@ -1,0 +1,44 @@
+
+.main-wrapper{
+    display: flex;
+    gap:10px;
+}
+.main-left{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    flex-grow: 2;
+    width: 100%;
+    flex-shrink: 1;
+}
+
+.right-col{
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    flex-shrink: 3;
+}
+
+.routes{
+   background-color: var(--background-color);
+   border-radius: 5px;
+
+}
+
+.routes>p{
+    font-size: 14px;
+}
+
+.section-detail{
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+}

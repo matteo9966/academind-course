@@ -1,0 +1,23 @@
+.course-list{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    border-radius: 5px;
+    width: 100%;
+    padding: 0;
+    padding-right: 10px;
+}
+
+.course-list__item{
+  border: 1px solid gray;
+  text-align: center;
+  padding: 3px 1ch;
+  width: 100%;
+}
+
+li>a{
+    text-decoration: none;
+    font-size: 11px;
+    height: 100%;
+    line-height: 100%;
+}
