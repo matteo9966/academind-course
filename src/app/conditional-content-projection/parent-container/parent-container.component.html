@@ -1,0 +1,34 @@
+<div>
+  <app-child-element
+    [items]="items"
+    [itemTemplate]="selectedTemplate"
+  ></app-child-element>
+</div>
+
+<ng-template #parentTemplate>
+  <div>
+    <h1>Questo è il contenuto del template</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
+      laudantium.
+    </p>
+  </div>
+</ng-template>
+
+<ng-template let-items #listTemplate>
+  <ul *ngFor="let item of items">
+    <li>
+      <h3>{{ item.name }}</h3>
+      <p>{{ item.description }}</p>
+    </li>
+  </ul>
+</ng-template>
+
+<ng-template let-items #cardTemplate>
+  <div *ngFor="let item of items">
+    <div class="card">
+      <h3>{{ item.name }}</h3>
+      <p>{{ item.description }}</p>
+    </div>
+  </div>
+</ng-template>

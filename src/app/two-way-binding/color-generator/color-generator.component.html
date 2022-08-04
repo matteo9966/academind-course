@@ -1,0 +1,16 @@
+<div>
+    <ng-container [ngTemplateOutlet]="color" [ngTemplateOutletContext]="{name:'red',change:changeRed}">
+    </ng-container>
+    <ng-container [ngTemplateOutlet]="color" [ngTemplateOutletContext]="{name:'blue',change:changeBlue}">
+    </ng-container>
+    <ng-container [ngTemplateOutlet]="color" [ngTemplateOutletContext]="{name:'yellow',change:changeYellow}">
+    </ng-container>
+</div>
+
+<ng-template #color let-name="name" let-change="change">
+    <div>
+      <label for="red-color">{{name}}</label>
+    <input type="range" id="range" min="0" max="255" (change)="change($event)" value="0">
+    </div>
+    
+</ng-template>

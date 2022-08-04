@@ -1,0 +1,47 @@
+
+<ng-container *ngIf="loaded;else templateLoading">
+    <app-directive-example></app-directive-example>
+    <app-memo-game></app-memo-game>
+    <app-first-form></app-first-form>
+    <div>
+        <app-color-container></app-color-container>
+    </div>
+    <div>
+      <div>Numero Voti: {{ numeroVoti }}</div>
+      <div *ngFor="let partito of partiti">
+        <app-voter [nomePartito]="partito" (votato)="onvotato($event)"></app-voter>
+      </div>
+    </div>
+    <div>
+        <app-timer #timer></app-timer>
+        <button (click)="start()">Start</button>
+        <button (click)="reset()">Reset</button>
+    </div>
+    <div>
+       
+    </div>
+    
+    <div>
+        <app-reusable-container>
+            <div header #header> questo +è l'header che ho scelto</div>
+            <!-- header è il primo a cui posso fare il query -->
+            <div body> questo è il bodi che ho scelto</div>
+            <div footer> questo è il footer che ho scelto</div>
+        </app-reusable-container>
+    </div>
+    <div>
+        <app-parent-container></app-parent-container>
+    </div>
+    <div>
+        <input type="text" name="" id="" #textInput (change)="onChangeInput($event)">
+    </div>
+</ng-container>
+
+<textarea name="" id="" cols="30" rows="10" #txtarea></textarea>
+<ng-template #templateLoading>
+    <h4>Caricamento in corso...</h4>
+</ng-template>
+
+<ng-template appExampleZippiContent>
+    It Depends on what you do with it!...
+</ng-template>
