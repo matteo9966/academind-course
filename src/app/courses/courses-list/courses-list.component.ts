@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-courses-list',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesListComponent implements OnInit {
 
-  constructor() { }
+  constructor(route:ActivatedRoute) {
+    route.params.subscribe(params=>console.log(`the current menu is ${params['id']}`))
+   }
 
   ngOnInit(): void {
   }

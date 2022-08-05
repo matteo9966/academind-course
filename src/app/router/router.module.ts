@@ -5,7 +5,9 @@ import { HomeComponent } from '../home/home.component';
 import { AboutComponent } from '../about/about.component';
 import { CoursesComponent } from '../courses/courses.component';
 import { CoursesCardsComponent } from '../courses/courses-cards/courses-cards.component';
-
+import { CoursesListComponent } from '../courses/courses-list/courses-list.component';
+import { CoursesCategoryComponent } from '../courses/courses-category/courses-category.component';
+import { GuardService } from '../shared/guard.service';
 const routes: Routes = [
   {
     path: 'home',
@@ -18,7 +20,21 @@ const routes: Routes = [
   {
     path: 'courses',
     component: CoursesComponent,
-    children: [{ path: '', component: CoursesCardsComponent }],
+    canActivate:[GuardService],
+    children: [
+      { path: '', component: CoursesCardsComponent },
+      { path: ':id', component: CoursesCategoryComponent },
+      {
+        path: '',
+        outlet: 'sidemenu',
+        component: CoursesListComponent,
+      },
+      {
+        path:':id',
+        outlet:'sidemenu',
+        component:CoursesListComponent
+      }
+    ],
   },
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: '**', pathMatch: 'full', redirectTo: '/home' },

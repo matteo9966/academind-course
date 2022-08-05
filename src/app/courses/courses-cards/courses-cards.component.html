@@ -1,8 +1,45 @@
-<ng-container>
-    <app-course-card [title]="'Development'" [description]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae alias beatae quaerat ipsum aliquam sequi nulla aut obcaecati dolorum tempora.'"></app-course-card>
-    <app-course-card [title]="'IT & Software'" [description]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae alias beatae quaerat ipsum aliquam sequi nulla aut obcaecati dolorum tempora.'"></app-course-card>
-    <app-course-card [title]="'Office Productivity'" [description]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae alias beatae quaerat ipsum aliquam sequi nulla aut obcaecati dolorum tempora.'"></app-course-card>
-    <app-course-card [title]="'Photography'" [description]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae alias beatae quaerat ipsum aliquam sequi nulla aut obcaecati dolorum tempora.'"></app-course-card>
-    <app-course-card [title]="'Health and Fitness'" [description]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae alias beatae quaerat ipsum aliquam sequi nulla aut obcaecati dolorum tempora.'"></app-course-card>
-    <app-course-card [title]="'Music'" [description]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae alias beatae quaerat ipsum aliquam sequi nulla aut obcaecati dolorum tempora.'"></app-course-card>
-</ng-container>
+<div class="cards-container">
+  <app-course-card
+    [title]="'Development'"
+    [description]="
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae alias beatae quaerat ipsum aliquam sequi nulla aut obcaecati dolorum tempora.'
+    "
+    [link]="'development'"
+  ></app-course-card>
+  <app-course-card
+    [title]="'IT & Software'"
+    [description]="
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae alias beatae quaerat ipsum aliquam sequi nulla aut obcaecati dolorum tempora.'
+    "
+    [link]="'it-software'"
+  ></app-course-card>
+  <app-course-card
+    [title]="'Office Productivity'"
+    [description]="
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae alias beatae quaerat ipsum aliquam sequi nulla aut obcaecati dolorum tempora.'
+    "
+    [link]="'office-prod'"
+  ></app-course-card>
+  <app-course-card
+    [title]="'Photography'"
+    [description]="
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae alias beatae quaerat ipsum aliquam sequi nulla aut obcaecati dolorum tempora.'
+    "
+    [title]="'photography'"
+    [link]="'photography'"
+  ></app-course-card>
+  <app-course-card
+    [title]="'Health and Fitness'"
+    [description]="
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae alias beatae quaerat ipsum aliquam sequi nulla aut obcaecati dolorum tempora.'
+    "
+    [link]="'health-fitness'"
+  ></app-course-card>
+  <app-course-card
+    [title]="'Music'"
+    [description]="
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae alias beatae quaerat ipsum aliquam sequi nulla aut obcaecati dolorum tempora.'
+    "
+    [link]="'music'"
+  ></app-course-card>
+</div>

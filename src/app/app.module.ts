@@ -10,6 +10,7 @@ import { AppRouterModule } from './router/router.module';
 import { CoursesListComponent } from './courses/courses-list/courses-list.component';
 import { CourseCardComponent } from './courses/course-card/course-card.component';
 import { CoursesCardsComponent } from './courses/courses-cards/courses-cards.component';
+import { CoursesCategoryComponent } from './courses/courses-category/courses-category.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CoursesCardsComponent } from './courses/courses-cards/courses-cards.com
     CoursesComponent,
     CoursesListComponent,
     CourseCardComponent,
-    CoursesCardsComponent
+    CoursesCardsComponent,
+    CoursesCategoryComponent
   ],
   imports: [
     BrowserModule,
