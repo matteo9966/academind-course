@@ -1,0 +1,7 @@
+<ng-container>
+    <ul>
+        <li *ngFor="let url of productURls">
+           <a [routerLink]="'./'+url">{{url}}</a>
+        </li>
+    </ul>
+</ng-container>
