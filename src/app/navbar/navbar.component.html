@@ -1,0 +1,9 @@
+<nav>
+  <ul class="button-list">
+    <li><a class="link" routerLink="/crisis-center" routerLinkActive="active">Crisis Center</a></li>
+    <li><a class="link" routerLink="/heroes" routerLinkActive="active">Heroes</a></li>
+    <li><a class="link" routerLink="/admin" routerLinkActive="active">Admin</a></li>
+    <li><a class="link" [routerLink]="[{outlets:{popup:['compose']}}]" routerLinkActive="active">Contact</a></li>
+
+  </ul>
+</nav>

@@ -1,0 +1,25 @@
+.button-list{
+    list-style: none;
+    display: flex;
+    gap:10px;
+}
+
+.button-list{
+    margin-top:20px;
+}
+
+ .link{
+    padding:10px 10px;
+    border:none;
+    border-radius: 5px;
+    background-color: #fff;
+    color:black;
+    text-decoration: none;
+    border:1px solid black;
+}
+
+.active{
+    color:white;
+    background-color: black;
+    border:1px solid white;
+}

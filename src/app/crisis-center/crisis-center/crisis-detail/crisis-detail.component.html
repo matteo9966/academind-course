@@ -1,0 +1,5 @@
+<div *ngIf="crisis$|async as crisis">
+    <p>{{crisis.name}}</p>
+    <p>Id: {{crisis.id}}</p>
+    <button (click)="gotoCrisis(crisis)">Home</button>
+</div>

@@ -1,0 +1,6 @@
+<ul >
+  <li *ngFor="let crisis of crisis$|async as crisisList">
+    <a [routerLink]="['./',crisis.id]"><span>{{crisis.id}}</span>{{ crisis.name }}</a>
+  </li>
+</ul>
+<router-outlet></router-outlet>

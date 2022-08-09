@@ -1,0 +1,30 @@
+.heroes{
+    width: 100vw;
+}
+.heroes li{
+    list-style: none;
+    margin:0;
+    padding: 0;
+    width: 100%;
+
+}
+
+.heroes li>a{
+    text-decoration: none;
+    color:black;
+}
+
+
+ a>span{
+    background-color: rgba(126, 126, 126, 0.486);
+    border-radius: 5px 0 0 5px;
+}
+
+
+.heroes .selected a {
+    background-color: #d6e6f7;
+  }
+  
+  .heroes .selected a:hover {
+    background-color: #bdd7f5;
+  }
