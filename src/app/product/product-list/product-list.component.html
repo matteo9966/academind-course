@@ -1,0 +1,13 @@
+<div *ngIf="products.length>0;else noproducts">
+    <ul>
+    <li *ngFor="let product of products">
+      {{ product.name }} -- {{ product.price / 100 }}€
+    </li>
+  </ul>
+
+
+</div>
+
+<ng-template #noproducts>
+    <h3>No products in the list :(</h3>
+</ng-template>

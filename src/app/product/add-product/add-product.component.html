@@ -1,0 +1,14 @@
+<div>
+  <h5>Product form</h5>
+  <div>
+    <label for="name"></label>
+    <input type="text" [(ngModel)]="name" />
+  </div>
+  <div>
+    <label for="price"></label>
+    <input type="number" [(ngModel)]="price" />
+  </div>
+  <div>
+    <button (click)="onSubmitProduct()">Add a product!</button>
+  </div>
+</div>

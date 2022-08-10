@@ -1,0 +1,19 @@
+<ul class="navbar">
+  <li class="item">
+    <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+  </li>
+  <li class="item" *ngIf="loggedIn$ | async">
+    <a
+      [routerLink]="['/product']"
+      routerLinkActive="active"
+      
+      >Product</a
+    >
+  </li>
+  <li class="item" *ngIf="!(loggedIn$ | async)">
+    <a [routerLink]="['/login']" routerLinkActive="active">Login</a>
+  </li>
+  <li class="item" *ngIf="loggedIn$ | async">
+    <a (click)="clickLogout()">Logout</a>
+  </li>
+</ul>
