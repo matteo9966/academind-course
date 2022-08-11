@@ -1,0 +1,9 @@
+<nav>
+    <ul>
+        <li><a [routerLink]="['crisis-center']" routerLinkActive="active">Crisis Center</a></li>
+        <li><a [routerLink]="['heroes']" routerLinkActive="active">Heroes</a></li>
+        <li><a [routerLink]="['admin']" routerLinkActive="active">Admin</a></li>
+        <li><a [routerLink]="[{outlets:{popup:['compose']}}]" routerLinkActive="active">Compose Message</a></li>
+        <li><a [routerLink]="['login']" routerLinkActive="active">Login</a></li>
+    </ul>
+</nav>

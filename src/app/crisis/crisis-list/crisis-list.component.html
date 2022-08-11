@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let crisis of crisis$ | async">
+    <a [routerLink]="[crisis.id]" [state]="crisis">
+      {{ crisis.name }}
+    </a>
+  </li>
+</ul>
+<router-outlet></router-outlet>

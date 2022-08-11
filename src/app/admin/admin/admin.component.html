@@ -1,0 +1,9 @@
+<h2>Admin</h2>
+<nav>
+    <!-- "./" equivale a /admin cioè il path corrente  -->
+  <a routerLink="./" routerLinkActive="active" 
+    [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page" [preserveFragment]="true" queryParamsHandling="preserve">Dashboard</a>
+  <a routerLink="./crises" routerLinkActive="active" ariaCurrentWhenActive="page" [preserveFragment]="true" queryParamsHandling="preserve">Manage Crises</a>
+  <a routerLink="./heroes" routerLinkActive="active" ariaCurrentWhenActive="page" [preserveFragment]="true" queryParamsHandling="preserve">Manage Heroes</a>
+</nav>
+<router-outlet></router-outlet>

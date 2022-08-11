@@ -1,0 +1,10 @@
+<p>Hero List</p>
+<ul>
+  <li *ngFor="let hero of heroList">
+    <a
+      [routerLink]="['/hero', hero.id]"
+      [class.selected]="selected === hero.id"
+      >{{ hero.name }}</a
+    >
+  </li>
+</ul>

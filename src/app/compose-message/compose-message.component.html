@@ -1,0 +1,15 @@
+<h3>Send a message!</h3>
+
+<div *ngIf="details">
+  {{ details }}
+</div>
+<div>
+  <div><label for="message">Enter your Message!</label></div>
+  <div>
+    <textarea name="" id="" cols="30" rows="10" [disabled]="sending"></textarea>
+    <p *ngIf="!sending">
+      <button type="button" (click)="send()">Send</button>
+      <button type="button" (click)="cancel()">Cancel</button>
+    </p>
+  </div>
+</div>
