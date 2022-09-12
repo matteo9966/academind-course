@@ -1,4 +1,30 @@
 <p>AUTHENTICATION</p>
 <button (click)="login()">LOGIN</button>
-<br>
+<br />
 <button (click)="logout()">LOGOUT</button>
+
+<br />
+<div [style.color]="subscribed ? 'green' : 'red'">Subscribed</div>
+<div>
+  <div *ngIf="loading">Invio Richiesta In corso...</div>
+
+  <button (click)="generateNameAndPassword()">
+    Generate random user name and password
+  </button>
+  <div>
+    <p><span style="margin-right: 10px">NAME:</span>{{ name }}</p>
+    <p><span style="margin-right: 10px">ID:</span>{{ id }}</p>
+  </div>
+  <button (click)="subscribeUser()">subscribe user</button>
+</div>
+
+<div>
+  <h5>Login Form</h5>
+  <h6>LOGGEDIN:{{loggedIn}}</h6>
+  <h6>USERNAME:{{loggedInUsername}}</h6>
+  <span style="border: 1px solid black">name:{{ loginName.name }}</span>
+  <form action="" #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <input type="text" [(ngModel)]="loginName.name" name="name" />
+    <button type="submit">Login</button>
+  </form>
+</div>

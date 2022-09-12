@@ -1,0 +1,5 @@
+<div *ngIf="userlist.length>0">
+    <ul *ngFor="let user of userlist;let i = index">
+        <li><span>{{i}})</span><strong>{{user.name}}</strong>|id:{{user.id}}</li>
+    </ul>
+</div>
