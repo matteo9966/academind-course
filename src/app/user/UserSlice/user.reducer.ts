@@ -11,7 +11,7 @@ export interface UserState {
 
 const initialUserState: UserState = {
   user: {
-    userId: 'userid1',
+    userId: 'user3',
     username: 'maurizio_costanzo',
   },
 };

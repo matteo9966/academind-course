@@ -1,0 +1,4 @@
+<h3> Here are the books of the logged User:</h3>
+<ul *ngFor="let book of booksOfUser$|async;let i = index">
+    <li>({{i}})-{{book.name}}-pages:{{book.pages}}</li>
+</ul>

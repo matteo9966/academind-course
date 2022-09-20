@@ -4,15 +4,22 @@ import {StoreModule} from '@ngrx/store';
 import { AppComponent } from './app.component';
 import { actionReducerMap } from './Store/Store';
 import { UserComponent } from './user/user.component';
+import { BookComponent } from './book/book.component';
+import { BookFormComponent } from './book/book-form/book-form.component';
+import { BookModule } from './book/bookModule/book.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
+    // BookComponent,
+    // BookFormComponent
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot(actionReducerMap)
+    StoreModule.forRoot(actionReducerMap),
+    BookModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
